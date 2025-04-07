@@ -9,7 +9,6 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
-import io.flutter.plugin.common.PluginRegistry.Registrar
 
 /** HeicToJpgPlugin */
 class HeicToJpgPlugin : FlutterPlugin, MethodCallHandler {
@@ -32,7 +31,7 @@ class HeicToJpgPlugin : FlutterPlugin, MethodCallHandler {
     companion object {
         var applicationContext: Context? = null
         @JvmStatic
-        fun registerWith(registrar: Registrar) {
+        fun registerWith() {
             val channel = MethodChannel(registrar.messenger(), "heic_to_jpg")
             channel.setMethodCallHandler(HeicToJpgPlugin())
         }
