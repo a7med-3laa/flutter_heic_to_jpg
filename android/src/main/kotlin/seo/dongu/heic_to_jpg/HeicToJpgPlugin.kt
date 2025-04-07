@@ -30,11 +30,6 @@ class HeicToJpgPlugin : FlutterPlugin, MethodCallHandler {
     // in the same class.
     companion object {
         var applicationContext: Context? = null
-        @JvmStatic
-        fun registerWith() {
-            val channel = MethodChannel(registrar.messenger(), "heic_to_jpg")
-            channel.setMethodCallHandler(HeicToJpgPlugin())
-        }
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
